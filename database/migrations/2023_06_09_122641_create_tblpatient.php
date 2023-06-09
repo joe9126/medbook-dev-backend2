@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('dob');
+            $table->string('gender_id');
+            $table->string('service_id');
             $table->timestamps();
         });
     }

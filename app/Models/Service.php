@@ -15,7 +15,8 @@ class Service extends Model
      */
     protected $fillable = [
         'patient_id',
-        'service_type',
+        'type_of_service',
+        'general_comments'
     ];
 
     /**

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('patient_id');
             $table->string('type_of_service');
             $table->string('general_comments');
-            $table->date('visit_date');
             $table->timestamps();
         });
     }
