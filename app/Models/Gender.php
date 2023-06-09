@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Gender extends Model
 {
     use HasFactory;
+
 
      /**
      * The attributes that are mass assignable.
@@ -15,27 +16,18 @@ class Patient extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'dob',
+        'patient_id',
+        'gender',
 
-    ];
-
-     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'dob' => 'date',
     ];
 
     /**
-     * Get the user associated with the Patient
+     * Get the user associated with the Gender
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function gender(): HasOne
+    public function patient(): HasOne
     {
-        return $this->hasOne(Gender::class, 'gender_id', 'id');
+        return $this->hasOne(Patient::class, 'patient_id', 'id');
     }
 }
