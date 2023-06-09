@@ -23,7 +23,7 @@ class Service extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function patient(): HasOne
+    public function patient(): BelongsTo
     {
         return $this->hasOne(Patient::class, 'patient_id', 'id');
     }
