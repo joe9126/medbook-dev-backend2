@@ -11,8 +11,8 @@ class PatientsController extends Controller
       Patient::create([
             "name" =>$request->name,
             "dob"=>$request->dob,
-            "gender_id" =>$gender()->id,
-            "service_id" =>$service()->id
+           // "gender_id" =>$gender()->id,
+            //"service_id" =>$service()->id
         ]);
 
         Gender::create([
