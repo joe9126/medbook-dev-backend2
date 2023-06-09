@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
+    protected $table ="tbl_service";
     /**
      * The attributes that are mass assignable.
      *
