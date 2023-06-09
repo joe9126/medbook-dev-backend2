@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use App\Models\Gender;
+use App\Models\Service;
 
 class PatientsController extends Controller
 {
