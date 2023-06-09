@@ -10,7 +10,7 @@ use App\Models\Service;
 class Patient extends Model
 {
     use HasFactory;
-
+    protected $table ="tblpatient";
      /**
      * The attributes that are mass assignable.
      *
