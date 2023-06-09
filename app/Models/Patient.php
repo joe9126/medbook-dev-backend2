@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Gender;
+use App\Models\Service;
 
 class Patient extends Model
 {
@@ -17,6 +19,8 @@ class Patient extends Model
     protected $fillable = [
         'name',
         'dob',
+        'gender_id',
+        'service_id'
 
     ];
 
@@ -37,5 +41,8 @@ class Patient extends Model
     public function gender(): HasOne
     {
         return $this->hasOne(Gender::class, 'gender_id', 'id');
+    }
+    public function service():HasOne{
+        return $this->hasOne(Service::class,'service_id','id');
     }
 }
