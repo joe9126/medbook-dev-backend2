@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Gender extends Model
 {
     use HasFactory;
-
+    protected $table ="tbl_gender";
 
      /**
      * The attributes that are mass assignable.
