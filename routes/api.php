@@ -26,4 +26,6 @@ Route::get('/',[UserController::class,'index'])->name('index');
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/user',[UserController::class,'user'])->name('authorised-user');
     Route::post("/register_patient",[PatientsController::class,'register_patient'])->name('patient.register');
+
+    Route::get('/patients',[PatientsController::class,'patients'])->name('patients-list');
 });

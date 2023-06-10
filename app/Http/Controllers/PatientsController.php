@@ -25,8 +25,14 @@ class PatientsController extends Controller
         $patient->service()->save($service);
 
 
-        $patients = Patient::all();
+        $patients = Patient::with('gender')->with('service')->get();
 
-        return response()->json(["patients"=>$patients],201);
+       return $this->patients();
+
+    }
+
+    function patients(){
+        $patients = Patient::with('gender')->with('service')->orderBy('created_at','desc')->get();
+        return  response()->json($patients,201);
     }
 }
