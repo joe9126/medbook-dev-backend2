@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 class Gender extends Model
@@ -24,10 +25,10 @@ class Gender extends Model
     /**
      * Get the user associated with the Gender
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function patient(): BelongsTo
     {
-        return $this->hasOne(Patient::class, 'patient_id', 'id');
+        return $this->hasOne(Patient::class, 'patient_id');
     }
 }

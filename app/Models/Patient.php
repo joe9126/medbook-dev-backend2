@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use App\Models\Gender;
 use App\Models\Service;
 
@@ -40,9 +41,9 @@ class Patient extends Model
      */
     public function gender(): HasOne
     {
-        return $this->hasOne(Gender::class, 'gender_id', 'id');
+        return $this->hasOne(Gender::class,'patient_id');
     }
     public function service():HasOne{
-        return $this->hasOne(Service::class,'service_id','id');
+        return $this->hasOne(Service::class,'patient_id');
     }
 }

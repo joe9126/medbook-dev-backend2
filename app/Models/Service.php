@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
@@ -27,6 +28,6 @@ class Service extends Model
      */
     public function patient(): BelongsTo
     {
-        return $this->hasOne(Patient::class, 'patient_id', 'id');
+        return $this->hasOne(Patient::class, 'patient_id');
     }
 }
